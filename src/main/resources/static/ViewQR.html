@@ -1,0 +1,183 @@
+<html>
+<head>
+    <title>Welcome</title>
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+        rel="stylesheet">
+         <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+        <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+          <link rel="stylesheet"  href="qr.css"></<link rel="stylesheet" >
+		  <script> 
+			$(function(){
+			  $("#header").load("header.html"); 
+			 
+			});
+		</script> 
+</head>
+<body>
+   <div id="header"></div>
+    
+    <div class="container" style='margin-top:30px;'>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Scan and Get Info</h3></div>
+                                    <div class="card-body" style='margin-top:30px;'>
+                                       
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                	<div class="col-md-6">
+                                                 		<label  >Enter UID</label>
+                                                 	</div>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control" id="txtQrCode" type="text" value=""  >
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                	<div class="col-md-6">
+                                                 		<label  >Application Name</label>
+                                                 	</div>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control" id="txtapplication" type="text" value="TECO_BOOKING" >
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                            </div> </br>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                	<div class="col-md-6">
+                                                 		<label >Auth Key</label>
+                                                 	</div>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control" id="txtkey" type="text" value="QRGENtI983GeK9tf6ixwu59L">
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                	<div class="col-md-6">
+                                                 		<label  >Auth Sign</label>
+                                                 	</div>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control" id="txtAuthSign" type="text" value="PPG_TECO" >
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                            </div> 
+                                             
+                                            </br>
+                                            <div class="row mb-3">
+                                                 
+                                                 
+                                            </div>
+                                            <div class="mt-4 mb-0">
+                                                <div class="d-grid"><a class="btn btn-primary btn-block" href="#"  id="submit_btn">Get QR Code</a></div>
+                                            </div>
+                                       
+                                    </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                                  
+    <div class="container" style='margin-top:50px;'>
+        <table class="table table-striped" id="tblList">
+            
+            
+            
+            <thead>
+                <tr>
+                    <th>UniqueID</th>
+                    <th>Order</th>
+                    <th>Key</th>
+                    <th>Application</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                   
+            </tbody>
+        </table>
+        <table class="table table-striped" id="tblList1" >
+            
+            
+            
+            <thead>
+                <tr>
+                    
+                    <th>Content</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                   
+            </tbody>
+        </table>
+       <table class="table table-striped" id="tblListCS" style="display:none;">
+            
+            
+            
+            <thead>
+                <tr>
+                    
+                    <th>ServiceName</th>
+                  <th>Qty</th>
+                  <th>Consumed</th>
+                </tr>
+            </thead>
+            <tbody>
+                   
+            </tbody>
+        </table>
+    </div>
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function()
+     {
+     $('#submit_btn').click(function(){
+    var txtQrCode = $('#txtQrCode').val();  var key= $('#txtkey').val(); var application= $('#txtapplication').val(); var centerLogo= "";
+	  var urlContentView= ""; var contentType= ""; var content= "";    var AuthSign = $('#txtAuthSign').val();
+	  
+	  $("#tblList1 tbody tr").remove();
+	  $("#tblList tbody tr").remove();
+	  var settings = {
+		  "url": "http://localhost:8181/getByorderId?orderId=" + txtQrCode + "&application=" + application + "&auth_sign="+ AuthSign + "&key=" + key ,
+		  "method": "GET",
+		  "timeout": 0,
+		};
+		
+		$.ajax(settings).done(function (getRowData) {
+		 //  var getRowData = getRowData.Data;
+		  //var parsed_data = JSON.parse(getRowData);
+		// console.log(response);
+		 var strRow="<tr><td>" + getRowData.id + " </td><td>" + getRowData.orderId + " </td><td>" + getRowData.key + "</td><td>" + getRowData.application + "</td></tr>";
+     			$('#tblList> tbody:last-child').append(strRow);
+     			strRow="<tr><td>" + getRowData.content + " </td></tr>";
+		  	$('#tblList1> tbody:last-child').append(strRow);
+    
+		});
+	  
+	  
+	  var settings1 = {
+		  "url": "http://localhost:8181/getAllListCS?orderId=" + txtQrCode + "&application=" + application + "&auth_sign="+ AuthSign + "&key=" + key ,
+		  "method": "GET",
+		  "timeout": 0,
+		};
+		$.ajax(settings1).done(function (getRowData) {
+		 
+		 var strRow="<tr><td>" + getRowData.code + " </td><td>" + getRowData.isConsumed + " </td><td>" + getRowData.key + "</td><td>" + getRowData.Remark + "</td></tr>";
+     			$('#tblListCS> tbody:last-child').append(strRow);
+     			 
+    
+		});
+	  
+		 
+   
+    });
+    });
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<html>
+<head>
+    <title>Welcome</title>
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+        rel="stylesheet">
+         <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+        <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+         <link rel="stylesheet"  href="qr.css"></<link rel="stylesheet" >
+          <script type="text/javascript" src="js/colorName.js"></script>
+          <script type="text/javascript" src="js/color.js"></script>
+          <link rel="import" href="header.html">
+          <script> 
+$(function(){
+  $("#header").load("header.html"); 
+ 
+});
+</script> 
+</head>
+<body>
+ <div id="header"></div>
+    
+    <div class="container" style='margin-top:30px;'>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Create QR Code</h3></div>
+                                    <div class="card-body" style='margin-top:30px;'>
+                                       
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                	<div class="col-md-6">
+                                                 		<label  >Enter Order No</label>
+                                                 	</div>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control" id="txtQrCode" type="text" value="" >
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                	<div class="col-md-6">
+                                                 		<label  >Application Name</label>
+                                                 	</div>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control" id="txtapplication" type="text" value="TECO_BOOKING" >
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                            </div> </br>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                	<div class="col-md-6">
+                                                 		<label >Auth Key</label>
+                                                 	</div>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control" id="txtkey" type="text" value="QRGENtI983GeK9tf6ixwu59L">
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                	<div class="col-md-6">
+                                                 		<label  >Auth Sign</label>
+                                                 	</div>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control" id="txtAuthSign" type="text" value="PPG_TECO" >
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                            </div></br>
+                                           
+                                              <div class="row">
+                                                <div class="col-md-6">
+                                                	<div class="col-md-6">
+                                                 		<label >Background Color</label>
+                                                 	</div>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control" id="txtbackground_color" type="color" value="#FFFFFF">
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                	<div class="col-md-6">
+                                                 		<label  >Data Gradient Color</label>
+                                                 	</div>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control" id="txtdata_gradient" type="color" value="#000000" >
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            </br>
+                                              <div class="row">
+                                                <div class="col-md-6">
+                                                	<div class="col-md-6">
+                                                 		<label  >Eye Color</label>
+                                                 	</div>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control" id="txteyecolor" type="color" value="#000000" >
+                                                        
+                                                    </div>
+                                                </div>
+                                                 
+                                                 </div>
+                                                 
+                                                 
+                                                 </br>
+                                              
+                                               <div class="row">
+                                               
+                                                	<div class="col-md-3">
+                                                 		<label >&nbsp;&nbsp;&nbsp;Content</label>
+                                                 	</div>
+                                                    <div class="col-md-9">
+                                                        <input class="form-control" id="txtContent" type="text" value="Test Remark" >
+                                                        
+                                                    </div>
+                                               
+                                               </div> 
+                                                 
+                                              <div class="row" style="display:none;">
+                                                <div class="col-md-6">
+                                                	<div class="col-md-6">
+                                                 		<label >Service</label>
+                                                 	</div>
+                                                    <div class="col-md-6">
+                                                        <select class="form-select form-select-lg col-md-12" aria-label="select Service" id="cmbCS">
+															  <option selected>select Service</option>
+															  <option value="Beer">Beer</option>
+															  <option value="Burger">Burger</option>
+															   <option value="SPA">SPA</option>
+															  <option value="Tea">Tea</option>
+															</select>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                	<div class="col-md-6">
+                                                 		<label  >Remark</label>
+                                                 	</div>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control" id="txtRemark" type="text" value="" >
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                            </div> 
+                                       </br>
+                                            <div class="row mb-3">
+                                                 
+                                                 
+                                            </div>
+                                            <div class="mt-4 mb-0">
+                                                <div class="d-grid"><a class="btn btn-primary btn-block" href="#"  id="submit_btn">Create QR Code</a></div>
+                                            </div>
+                                            </br>
+                                            <div class="row mb-3">
+                                                 
+                                                 
+                                            </div>
+                                            
+                                           
+                                 
+                                    
+                                </div>
+                                
+                                </br>
+                                <div class="container" style="display:none;">
+							        <table class="table table-striped" id="tblList">
+							            <caption>List of Services</caption>
+							            
+							            
+							            <thead>
+							                <tr>
+							                    <th>Service</th>
+							                    <th>Remark</th>
+							                    
+							                </tr>
+							            </thead>
+							            <tbody>
+							                   
+							            </tbody>
+							        </table>
+              </div>                   </br>
+                                              <div class="row" >
+                                               
+                                               <img id="QRImage" style=" display: block;margin-left: auto;margin-right: auto;" />
+                                              
+                                              
+                                              
+                                              </div>
+                                               </br>
+                                              <div class="row">
+                                              <div style='height:200px;width:200px;' id="div_imagetranscrits">
+                                                
+                                              
+                                              
+                                              </div>
+                                              </div>
+  
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function()
+     {
+     
+     
+     
+         var txtQrCode = $('#txtQrCode').val();  var key= $('#txtkey').val(); var application= $('#txtapplication').val(); var centerLogo= "";
+	  var urlContentView= ""; var contentType= ""; var content= "";  var AuthSign = $('#txtAuthSign').val();
+	  
+	 
+	 
+	   $('#btnAddCS').click(function(){
+	  
+	  var CS = $('#cmbCS').find(":selected").text();
+	    var Remark = $('#txtRemark').val();
+	   var strRow="<tr><td>" + CS + " </td><td>" + Remark + " </td><td> </tr>";
+     			$('#tblList> tbody:last-child').append(strRow);
+	  });
+	  
+	  
+	  
+	   function base64ToArrayBuffer(base64) {
+    var binaryString = window.atob(base64);
+    var binaryLen = binaryString.length;
+    var bytes = new Uint8Array(binaryLen);
+    for (var i = 0; i < binaryLen; i++) {
+       var ascii = binaryString.charCodeAt(i);
+       bytes[i] = ascii;
+    }
+    return bytes;
+ }
+     function _arrayBufferToBase64(buffer) {
+    var binary = '';
+    var bytes = new Uint8Array(buffer);
+    var len = bytes.byteLength;
+    for (var i = 0; i < len; i++) {
+        binary += String.fromCharCode(bytes[i]);
+    }
+    return window.btoa(binary);
+};
+  function saveByteArray(reportName, byte) {
+    var blob = new Blob([byte], {type: "application/png"});
+    var link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    var fileName = reportName;
+    link.download = fileName;
+    link.click();
+};   
+
+
+
+
+
+
+
+     $('#submit_btn').click(function(){
+		     
+		  var rows = [];
+		      var strContent="";
+		            $("#tblList tr").each(function () {
+		                    var self = $(this);
+		                  	var strCode =self.find("td:eq(0)").text().trim();
+		                  	if (strCode!=''){
+		                  	
+		                  	strContent=strContent + "code:" +  self.find("td:eq(0)").text().trim() +",isConsumed:N,Remark:" +self.find("td:eq(1)").text().trim() +";"; 
+		                    rows.push({
+		                    code: self.find("td:eq(0)").text().trim(),
+		                    isConsumed:   "N",
+		                    Remark:    self.find("td:eq(1)").text().trim()
+		                    
+		                });
+		                     }
+		                });
+            //var strContent=JSON.stringify(rows);
+          strContent =$('#txtContent').val();  
+    var txtQrCode = $('#txtQrCode').val();  var key= $('#txtkey').val(); var application= $('#txtapplication').val(); var centerLogo= "";
+	  var urlContentView= ""; var contentType= ""; var content= strContent;
+	  var eyeColor = $('#txteyecolor').val();  
+	  var backgroundColor = $('#txtbackground_color').val();  
+	  var dataGradientColor = $('#txtdata_gradient').val(); 
+	   var AuthSign = $('#txtAuthSign').val();
+	   
+	   var aa1=ntc;
+  var n_match   = ntc.name(eyeColor);
+	  eyeColor       = n_match[1]; 
+   
+	  
+ var n_match1   = ntc.name(backgroundColor);
+	 backgroundColor       = n_match1[1]; 
+   
+  
+   var n_match2   = ntc.name (dataGradientColor);
+	 dataGradientColor       = n_match2[1]; 
+         
+	  var settings = {
+  "url": "http://localhost:8181/generate?application=" + application + "&key=" + key + "&orderId=" +txtQrCode +"&auth_sign="+ AuthSign + "&content=" + content +"&eyeColor=" + eyeColor + "&dataGradientColor=" + dataGradientColor + "&backgroundColor=" + backgroundColor  ,
+  "method": "GET",
+  "timeout": 0,
+};
+ 
+$.ajax(settings).error(function(jqXHR, textStatus, errorThrown) {
+        alert(jqXHR.responseText);
+    }).done(function (response) {
+  //console.log(response);
+   //console.log(_arrayBufferToBase64(response));
+  // var bytes = new Uint8Array(response); // pass your byte response to this constructor
+//var sampleArr = base64ToArrayBuffer(response);
+//saveByteArray("QRCode.png", sampleArr); 
+ 
+ document.querySelector("#QRImage").src = "data:image/png;base64," + response ;
+  //  var imageBlob = new Blob([response], {type:'application/png'});
+   // var str = btoa(String.fromCharCode.apply(null, new Uint8Array(response)));
+
+  //console.log(str);
+  //var base64Image = Convert.ToBase64String(response);
+    //let img = new Image() 
+  //img.src = URL.createObjectURL(imageBlob)
+  //var url = window.URL || window.webkitURL;
+    //        var src = url.createObjectURL(imageBlob);
+           //  var imageUrl = urlCreator.createObjectURL(imageBlob);
+             //  document.querySelector("#QRImage").src = "data:image/png;base64," + base64Image ;
+           // $('#QRImage').attr("src", src);
+            $('.div_imagetranscrits').html('<img src="data:image/png;base64,' + response + '" />');
+   // $('.div_imagetranscrits').html('<img src="data:image/png;base64,' + _arrayBufferToBase64(response) + '" />');
+});
+	  
+	  
+	   
+/*
+ 
+	 
+		var JSONObject=  {"orderId":txtQrCode,"key":key, "application":application ,"auth_sign": AuthSign,"centerLogo":centerLogo , "urlContentView":urlContentView , "contentType":contentType,"content":content,"eyeColor": eyeColor, "dataGradientColor" :dataGradientColor ,"backgroundColor":backgroundColor} ;
+		//alert(JSONObject);
+		//var jsonData = JSON.parse( JSONObject );    
+    $.ajax({
+        type: "GET",
+        dataType : "jsonp",
+        url : "http://localhost:8181/generate",
+        data: JSONObject,
+         crossDomain: true,
+           headers: {
+               'Content-Length' :  '28211' },
+        success : function(data) {
+           alert(data);
+            document.querySelector("#QRImage").src = "data:image/png;base64," + response ;
+        },
+		error: function (jqXHR) {
+		   // alert('error; ' + error);
+		  //  document.getElementById("QRImage").src = error;
+		    var msg = '';
+	        if (jqXHR.status === 0) {
+	            msg = 'Not connect.\n Verify Network.';
+	        } else if (jqXHR.status == 404) {
+	            msg = 'Requested page not found. [404]';
+	        } else if (jqXHR.status == 500) {
+	            msg = 'Internal Server Error [500].';
+	         
+	        } else {
+	            msg = 'Uncaught Error.\n' + jqXHR.responseText;
+	        }
+	         document.querySelector("#QRImage").src = "data:image/png;base64," + response ;
+	     console.log(jqXHR.responseText);
+		}
+    });
+    */
+    });
+  
+  
+   $('#btnAddCSColor').click(function(){
+
+    var n_match  = ntc.name($('#txteyecolor').val());
+    
+var n_rgb        = n_match[0]; // This is the RGB value of the closest matching color
+  var   n_name       = n_match[1]; // This is the text string for the name of the match
+  var   n_exactmatch = n_match[2]; // True if exact color match, False if close-match
+    alert(n_name);
+   });
+  
+   $('#btnAddCS1').click(function(){
+	  
+	          
+    var txtQrCode = $('#txtQrCode').val();  var key= $('#txtkey').val(); var application= $('#txtapplication').val(); var centerLogo= "";
+	  var urlContentView= ""; var contentType= ""; var content= "";
+	  var eyeColor = $('#txteyecolor').val().replace("#","");  
+	  var backgroundColor = $('#txtbackground_color').val().replace("#","");  
+	  var dataGradientColor = $('#txtdata_gradient').val().replace("#","");  
+	  
+ 
+	  
+	  
+	  var settings = {
+  "url": "http://localhost:8181/generate?application=" + application + "&key=" + key + "&orderId=" +txtQrCode +"&content=" + content +"&eyeColor=" + eyeColor + "&dataGradientColor=" + dataGradientColor + "&backgroundColor=" + backgroundColor  ,
+  "method": "GET",
+  "timeout": 0,
+};
+ 
+$.ajax(settings).done(function (response) {
+const blob = new Blob([response], { type: "image/PNG" });
+const imageUrl = URL.createObjectURL(blob);
+   //$('#QRImage').attr("src", "data:image/png;base64," + strImg);
+   document.getElementById("QRImage").src = imageUrl;
+             
+});
+	  });
+	  
+	  
+	  
+	  
+	  function base64ArrayBuffer(binary) {
+    const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < bytes.length; i++) {
+    bytes[i] = binary.charCodeAt(i);
+  }
+  const charCodes = new Uint16Array(bytes.buffer);
+  let result = '';
+  for (let i = 0; i < charCodes.length; i++) {
+    result += String.fromCharCode(charCodes[i]);
+  }
+  return result;
+}
+    });
+
+
+
+</script>
+</body>
+</html>

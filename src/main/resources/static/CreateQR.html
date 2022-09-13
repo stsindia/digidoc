@@ -294,7 +294,7 @@ $(function(){
 	 dataGradientColor       = n_match2[1]; 
          
 	  var settings = {
-  "url": "http://localhost:8181/generate?application=" + application + "&key=" + key + "&orderId=" +txtQrCode +"&auth_sign="+ AuthSign + "&content=" + content +"&eyeColor=" + eyeColor + "&dataGradientColor=" + dataGradientColor + "&backgroundColor=" + backgroundColor  ,
+  "url": "http://localhost:8181/api/generateQRCode?application=" + application + "&key=" + key + "&orderId=" +txtQrCode +"&auth_sign="+ AuthSign + "&content=" + content +"&eyeColor=" + eyeColor + "&dataGradientColor=" + dataGradientColor + "&backgroundColor=" + backgroundColor  ,
   "method": "GET",
   "timeout": 0,
 };
@@ -336,7 +336,7 @@ $.ajax(settings).error(function(jqXHR, textStatus, errorThrown) {
     $.ajax({
         type: "GET",
         dataType : "jsonp",
-        url : "http://localhost:8181/generate",
+        url : "http://localhost:8181/api/generateQRCode",
         data: JSONObject,
          crossDomain: true,
            headers: {
@@ -390,7 +390,7 @@ var n_rgb        = n_match[0]; // This is the RGB value of the closest matching 
 	  
 	  
 	  var settings = {
-  "url": "http://localhost:8181/generate?application=" + application + "&key=" + key + "&orderId=" +txtQrCode +"&content=" + content +"&eyeColor=" + eyeColor + "&dataGradientColor=" + dataGradientColor + "&backgroundColor=" + backgroundColor  ,
+  "url": "http://localhost:8181/api/generateQRCode?application=" + application + "&key=" + key + "&orderId=" +txtQrCode +"&content=" + content +"&eyeColor=" + eyeColor + "&dataGradientColor=" + dataGradientColor + "&backgroundColor=" + backgroundColor  ,
   "method": "GET",
   "timeout": 0,
 };

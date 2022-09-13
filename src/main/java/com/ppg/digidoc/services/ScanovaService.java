@@ -3,6 +3,8 @@ package com.ppg.digidoc.services;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.ppg.digidoc.config.ApiConfig;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -122,7 +124,7 @@ public class ScanovaService {
         		 .queryParam("background_color", backgroundColor)
         		 .queryParam("data_gradient_start_color", dataGradientColor)
         		 .queryParam("data_gradient_end_color", dataGradientColor)
-        		 .queryParam("apikey", "gxktljtpdoqrbnboprhojsvdwguyloewxyxhgplg")
+        		 .queryParam("apikey", "zbuagnitiedblglqigkdzfhxqtoseokzciezaion")
         		 .queryParam("format", "png")
                 .build().toString();
        

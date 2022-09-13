@@ -1,5 +1,4 @@
 package com.ppg.digidoc.services;
 
-public class ScanovaServiceConfig {
-
+public interface QRCodeService {
 }

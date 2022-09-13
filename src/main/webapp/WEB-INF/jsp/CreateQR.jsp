@@ -125,7 +125,7 @@
 	  var urlContentView= ""; var contentType= ""; var content= "";
 	  
 	  var settings = {
-  "url": "http://localhost:8181/generate?application=POSTMAN&key=nokeydef&content=&orderId=Tec244",
+  "url": "http://localhost:8181/api/generateQRCode?application=POSTMAN&key=nokeydef&content=&orderId=Tec244",
   "method": "GET",
   "timeout": 0,
 };

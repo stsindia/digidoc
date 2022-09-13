@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.repository.Query;
 import com.ppg.digidoc.models.ApplicationName;
  
  
-public interface ApplicationNameRepo extends MongoRepository<ApplicationName, String> {
+public interface ClientApplicationRepository extends MongoRepository<ApplicationName, String> {
 
 	/*
 	 * @Autowired private final MongoTemplate mongoTemplate=new

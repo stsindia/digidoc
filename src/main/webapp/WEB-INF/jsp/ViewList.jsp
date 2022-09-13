@@ -105,7 +105,7 @@
 	  
 	  	  $("#tblList  tr").remove();
 	  var settings = {
-		  "url": "http://localhost:8181/getAllList?orderId=STS06&application=POSTMAN&key=nokeydef",
+		  "url": "http://localhost:8181/api/getQRRequests?orderId=STS06&application=POSTMAN&key=nokeydef",
 		  "method": "GET",
 		  "timeout": 0,
 		};

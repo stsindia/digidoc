@@ -141,7 +141,7 @@
 	  $("#tblList1 tbody tr").remove();
 	  $("#tblList tbody tr").remove();
 	  var settings = {
-		  "url": "http://localhost:8181/getByorderId?orderId=" + txtQrCode + "&application=" + application + "&auth_sign="+ AuthSign + "&key=" + key ,
+		  "url": "http://localhost:8181/api/getQRRequestByOrderId?orderId=" + txtQrCode + "&application=" + application + "&auth_sign="+ AuthSign + "&key=" + key ,
 		  "method": "GET",
 		  "timeout": 0,
 		};
@@ -159,7 +159,7 @@
 	  
 	  
 	  var settings1 = {
-		  "url": "http://localhost:8181/getAllListCS?orderId=" + txtQrCode + "&application=" + application + "&auth_sign="+ AuthSign + "&key=" + key ,
+		  "url": "http://localhost:8181/api/getConsumerServices?orderId=" + txtQrCode + "&application=" + application + "&auth_sign="+ AuthSign + "&key=" + key ,
 		  "method": "GET",
 		  "timeout": 0,
 		};

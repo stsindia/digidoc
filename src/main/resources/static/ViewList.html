@@ -105,7 +105,7 @@ $(function(){
 	  
 	  	  $("#tblList tbody tr").remove();
 	  var settings = {
-		  "url": "http://localhost:8181/getAllList?application=" + application + "&auth_sign="+ AuthSign + "&key=" + key ,
+		  "url": "http://localhost:8181/api/getQRRequests?application=" + application + "&auth_sign="+ AuthSign + "&key=" + key ,
 		  "method": "GET",
 		  "timeout": 0,
 		};

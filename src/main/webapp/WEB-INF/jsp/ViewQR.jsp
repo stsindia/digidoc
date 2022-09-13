@@ -119,7 +119,7 @@
 	  $("#tblList1  tr").remove();
 	  $("#tblList  tr").remove();
 	  var settings = {
-		  "url": "http://localhost:8181/getByorderId?orderId=" + txtQrCode + "&application=POSTMAN&key=nokeydef",
+		  "url": "http://localhost:8181/api/getQRRequestByOrderId?orderId=" + txtQrCode + "&application=POSTMAN&key=nokeydef",
 		  "method": "GET",
 		  "timeout": 0,
 		};

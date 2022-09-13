@@ -1,9 +1,8 @@
-package com.ppg.digidoc.services;
-
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+package com.ppg.digidoc.config;
 
 import lombok.extern.java.Log;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 @Log
 @Component

@@ -1,4 +1,16 @@
-package com.ppg.digidoc.services;
+package com.ppg.digidoc.utils;
+
+import com.ppg.digidoc.models.CustomerServices;
+import com.ppg.digidoc.models.QRRequest;
+import com.ppg.digidoc.models.QRResponse;
+import com.ppg.digidoc.repository.CustomerServicesRepo;
+import com.ppg.digidoc.repository.MetaDocRepository;
+import com.ppg.digidoc.services.ScanovaService;
+import lombok.extern.slf4j.Slf4j;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -6,19 +18,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Optional;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import com.ppg.digidoc.Common.JsonValidator;
-import com.ppg.digidoc.models.CustomerServices;
-import com.ppg.digidoc.models.QRRequest;
-import com.ppg.digidoc.models.QRResponse;
-import com.ppg.digidoc.repository.CustomerServicesRepo;
-import com.ppg.digidoc.repository.MetaDocRepository;
-
-import lombok.extern.slf4j.Slf4j;
 @Component
 @Slf4j
 public class QRCodeGenerator {

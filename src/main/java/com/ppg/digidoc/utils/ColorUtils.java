@@ -1,8 +1,9 @@
-package com.ppg.digidoc.services;
-import java.awt.Color;
+package com.ppg.digidoc.utils;
+
+import java.awt.*;
 import java.util.ArrayList;
 
- 
+
 public class ColorUtils {
 
 	/**

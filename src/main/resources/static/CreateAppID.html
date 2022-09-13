@@ -116,7 +116,7 @@
      $.ajax({
         type: "GET",
        
-        url : "http://localhost:8181/CreateNewAPP?ApplicationName=" + application + "&Auth_Sign=" + txtPrefix ,
+        url : "http://localhost:8181/api/generateAPIKey?ApplicationName=" + application + "&Auth_Sign=" + txtPrefix ,
        
          crossDomain: true,
           
@@ -149,7 +149,7 @@
       
 	  	  $("#tblList tbody tr").remove();
 	  var settings = {
-		  "url": "http://localhost:8181/getAPPList",
+		  "url": "http://localhost:8181/api/getApplications",
 		  "method": "GET",
 		  "timeout": 0,
 		};

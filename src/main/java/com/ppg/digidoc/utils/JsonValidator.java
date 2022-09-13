@@ -1,4 +1,4 @@
-package com.ppg.digidoc.Common;
+package com.ppg.digidoc.utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
